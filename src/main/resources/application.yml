@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: spring-data-jpa-homework
+
+  datasource:
+    username: postgres
+    password: 123
+    url: jdbc:postgresql://localhost:5433/ecommerce
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+
+server:
+  port: 9091
