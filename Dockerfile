@@ -3,7 +3,7 @@ FROM gradle:jdk21-ubi-minimal AS build
 
 WORKDIR /app
 
-# Copy only gradle wrapper and config files to cache dependencies.
+# Copy only gradle wrapper and config files to cache dependencies..
 COPY gradlew .
 COPY gradle gradle
 COPY build.gradle .
