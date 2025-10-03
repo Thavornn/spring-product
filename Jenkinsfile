@@ -40,14 +40,14 @@ spec:
             steps {
                 withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 'GH_USER', passwordVariable: 'GH_TOKEN')]) {
                     sh """
-                        git clone -b ${CD_BRANCH} https://${GH_USER}:${GH_TOKEN}@github.com/Thavornn/spring-product-cd.git cd-repo
+                        git clone -b ${CD_BRANCH} https://${GH_USER}:${GH_TOKEN}@github.com/Thavornn/spring-manifest.git cd-repo
                         cd cd-repo
                         git config user.name "Thavornn"
                         git config user.email "pinklemon122@gmail.com"
                         sed -i "s|tag: .*|tag: ${IMAGE_TAG}|" values.yaml
                         git add values.yaml
                         git commit -m "Update image tag to ${IMAGE_TAG}"
-                        git push https://${GH_USER}:${GH_TOKEN}@github.com/Thavornn/spring-product-cd.git ${CD_BRANCH}
+                        git push https://${GH_USER}:${GH_TOKEN}@github.com/Thavornn/spring-manifest.git ${CD_BRANCH}
                     """
                 }
             }
